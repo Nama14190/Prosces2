@@ -15,7 +15,7 @@ GITHUB_TOKEN = input("Enter your GitHub personal access token: ").strip()
 print("Creating GitHub repository...")
 
 repo_data = {
-    "name": REPO_NAME,
+    "name": Prosces2,
     "private": False,  # Change to True if you want a private repo
     "description": "Commit Graph :D https://github.com/0vm/commit-graph-spoof",
 }
@@ -23,17 +23,17 @@ repo_data = {
 response = requests.post(
     "https://api.github.com/user/repos",
     json=repo_data,
-    headers={"Authorization": f"token {GITHUB_TOKEN}"}
+    headers={"Authorization": f"token {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}"}
 )
 
 if response.status_code == 201:
-    print(f"✅ Repository '{REPO_NAME}' created!")
+    print(f"✅ Repository '{Prosces2}' created!")
 else:
     print(f"❌ Failed to create repository: {response.json().get('message')}")
     exit(1)
 
 # Step 2: Clone the new repo
-GIT_REPO_URL = f"https://{GITHUB_USER}:{GITHUB_TOKEN}@github.com/{GITHUB_USER}/{REPO_NAME}.git"
+GIT_REPO_URL = f"https://{Nama14190}:{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}@github.com/{Nama14190}/{Prosces2}.git"
 subprocess.run(["git", "clone", GIT_REPO_URL])
 os.chdir(REPO_NAME)
 
@@ -50,4 +50,4 @@ subprocess.run(["git", "branch", "-M", "main"])
 subprocess.run(["git", "push", "-u", "origin", "main"])
 
 print(f"Repo '{REPO_NAME}' pushed!")
-print(f"View it here: https://github.com/{GITHUB_USER}/{REPO_NAME}")
+print(f"View it here: https://github.com/{Nama14190}/{Prosces2}")
